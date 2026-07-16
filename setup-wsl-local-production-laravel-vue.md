@@ -29,12 +29,34 @@ wsl --list --online
 wsl --install Ubuntu-24.04
 ```
 
-Cek:
+Cek powershell:
 
 ``` powershell
 wsl -l -v
 ```
 
+Update C:\Users\jtech\.wslconfig:
+
+``` powershell
+[wsl2]
+networkingMode=mirrored
+localhostForwarding=true
+```
+Simpan lalu jalankan:
+
+``` powershell
+wsl --shutdown
+```
+Cek di wsl:
+
+``` powershell
+ss -tulpn | grep 8000
+```
+Jika benar outputnya seperti ini:
+
+``` powershell
+tcp   LISTEN 0      4096          0.0.0.0:8000       0.0.0.0:*    users:(("php8.3",pid=3117,fd=6))
+```
 ------------------------------------------------------------------------
 
 ## 2. Update Ubuntu
