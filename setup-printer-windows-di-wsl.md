@@ -252,10 +252,16 @@ $printer->close();
 lpstat -p
 ```
 
-## Cek job
+## Cek printer
 
 ```bash
-lpstat -W all
+lpstat -p
+```
+
+## Allow Firewall — buka port SMB di powershell
+
+```bash
+netsh advfirewall firewall add rule name="SMB Printer" dir=in action=allow protocol=TCP localport=445
 ```
 
 ## Cek printer URI
