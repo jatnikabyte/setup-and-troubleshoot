@@ -59,7 +59,14 @@ Sharename       Type
 POS80           Printer
 print$          Disk
 ```
+Testing print dari smb:
 
+```
+echo -e "\n\nTEST PRINT DARI SERVER\n\n" > /tmp/testprint.txt
+```
+```
+smbclient //192.168.1.100/POS80 -U enjat -c 'print /tmp/testprint.txt' -m SMB2
+```
 Apabila gagal, pastikan:
 
 * File and Printer Sharing aktif di Windows.
@@ -108,7 +115,6 @@ Harus terdapat:
 ```
 network smb
 ```
-
 ---
 
 # 5. Tambahkan printer ke CUPS
